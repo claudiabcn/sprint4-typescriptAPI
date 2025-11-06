@@ -4,11 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jokes Website</title>
+    <link rel="icon" type="image/jpg" href="./assets/img/faviconJoke.jpg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./styles/tailwind.config.js"></script>
   </head>
-  <body>
-    <h1>Jokes</h1>
-    <p id="joke"></p>
-    <button id="btn">Next joke</button>
+
+  <body class="bg-secondary flex items-center justify-center min-h-screen p-4">
+    <div
+      class="bg-white p-6 md:p-10 rounded-xl shadow-2xl max-w-lg w-full text-center"
+    >
+      <h1 class="text-3xl font-bold text-primary mb-6">✨ Jokes ✨</h1>
+
+      <p
+        id="joke"
+        class="text-xl text-gray-700 mb-8 min-h-[50px] flex items-center justify-center"
+      ></p>
+
+      <button
+        id="btn"
+        class="bg-primary hover:bg-fuchsia-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 shadow-md hover:shadow-lg"
+      >
+        Next joke
+      </button>
+    </div>
     <script type="module" src="./dist/main.js"></script>
   </body>
 </html>
