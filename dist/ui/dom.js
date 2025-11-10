@@ -10,6 +10,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { getJoke } from '../api/jokes.js';
 const jokeElement = document.getElementById('joke');
 const btnElement = document.getElementById('btn');
+const btnScore1 = document.getElementById('btn-score1');
+const btnScore2 = document.getElementById('btn-score2');
+;
+const btnScore3 = document.getElementById('btn-score3');
+;
 export function displayNewJoke() {
     return __awaiter(this, void 0, void 0, function* () {
         if (jokeElement) {
