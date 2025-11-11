@@ -12,18 +12,18 @@ const btnScore3 = document.getElementById('btn-score3') as HTMLButtonElement;;
 export async function displayNewJoke() { 
     const state = getState()
     
-if (hasUserVoted() && state.currentJoke !== null) {
-addReport(state.currentJoke,state.currentScore!);
-resetState()
+    if (hasUserVoted() && state.currentJoke !== null) {
+        addReport(state.currentJoke, state.currentScore!);
+        resetState()
     }
     
     if (jokeElement) {
         const joke = await getJoke();
         jokeElement.textContent = joke;
         setCurrentJoke(joke);
-            }
-}
 
+    }
+}
 export function setupEventListeners() { 
     if (btnElement) {
         btnElement.addEventListener('click', displayNewJoke);       

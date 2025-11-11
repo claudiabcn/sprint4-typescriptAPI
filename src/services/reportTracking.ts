@@ -4,13 +4,12 @@ const reportJokes: JokeReport[] = [];
 
 export function addReport(joke: string, score: 1 | 2 | 3): void {
   const newReport: JokeReport = {
-    joke,  
+    joke,
     score,
-    date: new Date().toISOString()
+    date: new Date().toISOString(),
   };
-  
   reportJokes.push(newReport);
-    
+  console.table(reportJokes);
 }
 
 export function getReports(): JokeReport[] {

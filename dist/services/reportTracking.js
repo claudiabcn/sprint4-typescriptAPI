@@ -3,10 +3,10 @@ export function addReport(joke, score) {
     const newReport = {
         joke,
         score,
-        date: new Date().toISOString()
+        date: new Date().toISOString(),
     };
     reportJokes.push(newReport);
-    console.log(reportJokes);
+    console.table(reportJokes);
 }
 export function getReports() {
     return reportJokes;
