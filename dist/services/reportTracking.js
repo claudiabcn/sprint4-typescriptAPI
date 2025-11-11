@@ -1,7 +1,12 @@
 const reportJokes = [];
 export function addReport(joke, score) {
-}
-export function updateLastReport(newScore) {
+    const newReport = {
+        joke,
+        score,
+        date: new Date().toISOString()
+    };
+    reportJokes.push(newReport);
+    console.log(reportJokes);
 }
 export function getReports() {
     return reportJokes;

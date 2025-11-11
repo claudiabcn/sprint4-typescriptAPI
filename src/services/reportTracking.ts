@@ -1,9 +1,16 @@
+import { JokeReport } from "../types/interfaces.js";
+
 const reportJokes: JokeReport[] = [];
 
 export function addReport(joke: string, score: 1 | 2 | 3): void {
-}
-
-export function updateLastReport(newScore: 1 | 2 | 3): void {
+  const newReport: JokeReport = {
+    joke,  
+    score,
+    date: new Date().toISOString()
+  };
+  
+  reportJokes.push(newReport);
+    
 }
 
 export function getReports(): JokeReport[] {
