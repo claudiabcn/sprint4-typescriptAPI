@@ -2,6 +2,16 @@ export interface Joke {
   joke: string;
 }
 
+export interface ChuckNorrisJoke {
+  value: string;
+  icon_url: string;
+  id: string;
+  url: string;
+  created_at: string;
+  updated_at: string;
+  categories: string[];
+}
+
 export interface JokeReport {
 joke: string;
 score: 1 | 2 | 3; 
