@@ -7,8 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { getJoke } from '../utils/getJoke.js';
-import { getState, setCurrentJoke, updateScore, resetState, hasUserVoted } from '../state/jokeState.js';
+import { getJoke } from '../services/getJoke.js';
+import { getState, setCurrentJoke, updateScore, resetState, hasUserVoted } from '../services/jokeState.js';
 import { addReport } from '../services/reportTracking.js';
 const jokeElement = document.getElementById('joke');
 const btnElement = document.getElementById('btn');
@@ -63,4 +63,4 @@ function handleScoreClick(score, clickedButton) {
     clickedButton.classList.add('bg-fuchsia-600', 'ring-offset-2', 'ring-4', 'ring-primary');
     updateScore(score);
 }
-//# sourceMappingURL=dom.js.map
+//# sourceMappingURL=jokeDom.js.map

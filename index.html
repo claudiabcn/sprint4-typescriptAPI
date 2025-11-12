@@ -9,45 +9,58 @@
     <script src="./styles/tailwind.config.js"></script>
   </head>
 
-  <body class="bg-secondary flex items-center justify-center min-h-screen p-4">
-    <div
-      class="bg-white p-6 md:p-10 rounded-xl shadow-2xl max-w-lg w-full text-center"
-    >
-      <h1 class="text-3xl font-bold text-primary mb-6">✨ Jokes ✨</h1>
+  <body class="bg-secondary min-h-screen p-4">
+    <div class="flex flex-col items-center justify-center min-h-screen gap-6">
+      <header
+        class="w-full max-w-md bg-[#EFF6FF] rounded-2xl border-2 border-blue-200 shadow-lg p-4 text-xl"
+        id="weather"
+      >
+        <section class="text-center" id="weather__display">
+          <p class="text-gray-500 text-xl">Loading weather...</p>
+        </section>
+      </header>
 
-      <p
-        id="joke"
-        class="text-xl text-gray-700 mb-8 min-h-[50px] flex items-center justify-center"
-      ></p>
+      <div
+        class="bg-white p-6 md:p-10 rounded-xl shadow-2xl max-w-lg w-full text-center"
+      >
+        <h1 class="text-3xl font-bold text-primary mb-6">✨ Jokes ✨</h1>
 
-      <div class="flex flex-wrap gap-4 mb-4 justify-center">
-        <button
-          id="btn-score1"
-          class="bg-primary hover:bg-fuchsia-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 shadow-md hover:shadow-lg"
+        <p
+          id="joke"
+          class="text-xl text-gray-700 mb-8 min-h-[50px] flex items-center justify-center"
         >
-          ah :|
-        </button>
-        <button
-          id="btn-score2"
-          class="bg-primary hover:bg-fuchsia-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 shadow-md hover:shadow-lg"
-        >
-          haha :)
-        </button>
-        <button
-          id="btn-score3"
-          class="bg-primary hover:bg-fuchsia-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 shadow-md hover:shadow-lg"
-        >
-          hahahah :D
-        </button>
-      </div>
+          Loading joke...
+        </p>
 
-      <div>
-        <button
-          id="btn"
-          class="bg-primary hover:bg-fuchsia-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-200 shadow-md hover:shadow-lg"
-        >
-          Next joke
-        </button>
+        <div class="flex flex-wrap gap-4 mb-4 justify-center">
+          <button
+            id="btn-score1"
+            class="bg-primary hover:bg-fuchsia-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 shadow-md hover:shadow-lg"
+          >
+            ah :|
+          </button>
+          <button
+            id="btn-score2"
+            class="bg-primary hover:bg-fuchsia-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 shadow-md hover:shadow-lg"
+          >
+            haha :)
+          </button>
+          <button
+            id="btn-score3"
+            class="bg-primary hover:bg-fuchsia-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 shadow-md hover:shadow-lg"
+          >
+            hahahah :D
+          </button>
+        </div>
+
+        <div>
+          <button
+            id="btn"
+            class="bg-primary hover:bg-fuchsia-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-200 shadow-md hover:shadow-lg"
+          >
+            Next joke
+          </button>
+        </div>
       </div>
     </div>
     <script type="module" src="./dist/main.js"></script>

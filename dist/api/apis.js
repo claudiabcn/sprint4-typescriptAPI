@@ -1,8 +1,3 @@
-// export async function getJoke() {
-//   try {
-//     const response = await fetch("https://icanhazdadjoke.com", {
-//       headers: { Accept: "application/json" },
-//     });
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -12,15 +7,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-//     if (!response.ok) {
-//       throw new Error(`API Error: ${response.status}`);
-//     }
-//     const data: any = await response.json();
-//     return data.joke;
-//   } catch (error) {
-//     console.error(error);
-//     return "Sorry, the joke couldn't be loaded.";
-//   }  }
 export function fetchData(url_1) {
     return __awaiter(this, arguments, void 0, function* (url, options = {}) {
         try {
@@ -37,4 +23,4 @@ export function fetchData(url_1) {
         }
     });
 }
-//# sourceMappingURL=jokes.js.map
+//# sourceMappingURL=apis.js.map

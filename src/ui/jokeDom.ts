@@ -1,5 +1,5 @@
-import { getJoke } from '../api/jokes.js';
-import { getState, setCurrentJoke, updateScore, resetState, hasUserVoted } from '../state/jokeState.js';
+import { getJoke } from '../services/getJoke.js';
+import { getState, setCurrentJoke, updateScore, resetState, hasUserVoted } from '../services/jokeState.js';
 import { addReport } from '../services/reportTracking.js';
 
 const jokeElement = document.getElementById('joke') as HTMLParagraphElement;
@@ -52,8 +52,6 @@ if (btnScore3) {
             handleScoreClick(3, btnScore3);
         });
     }
-
-    
 }
 
 function clearScoreButtonSelection(): void {
