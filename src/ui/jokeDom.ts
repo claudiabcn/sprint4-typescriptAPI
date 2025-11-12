@@ -24,9 +24,13 @@ export async function displayNewJoke() {
 
     if (jokeElement) {
         const joke = await getJoke();
-        jokeElement.textContent = joke;
-        setCurrentJoke(joke);
-
+        
+        if (joke) {
+            jokeElement.textContent = joke;
+            setCurrentJoke(joke);
+        } else {
+            jokeElement.textContent = "Sorry, the joke couldn't be loaded.";
+        }
     }
 }
 
@@ -35,19 +39,19 @@ export function setupEventListeners() {
         btnElement.addEventListener('click', displayNewJoke);       
     }
 
-if (btnScore1) {
+    if (btnScore1) {
         btnScore1.addEventListener('click', () => {
             handleScoreClick(1, btnScore1);
         });
     }
 
-if (btnScore2) {
+    if (btnScore2) {
         btnScore2.addEventListener('click', () => {
             handleScoreClick(2, btnScore2);
         });
     }
 
-if (btnScore3) {
+    if (btnScore3) {
         btnScore3.addEventListener('click', () => {
             handleScoreClick(3, btnScore3);
         });
@@ -62,7 +66,6 @@ function clearScoreButtonSelection(): void {
 }
 
 function handleScoreClick(score: 1 | 2 | 3, clickedButton: HTMLButtonElement): void {
-
     clearScoreButtonSelection();
 
     clickedButton.classList.remove('bg-primary', 'hover:bg-fuchsia-600'); 

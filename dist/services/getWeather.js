@@ -16,7 +16,6 @@ export function getWeather(lat, lon) {
             return data;
         }
         catch (error) {
-            console.error("Error fetching weather:", error);
             return null;
         }
     });

@@ -16,7 +16,6 @@ export async function getUserLocation(): Promise<{ lat: number; lon: number }> {
       lon: position.coords.longitude,
     };
   } catch (error) {
-    console.warn("Usando ubicación por defecto (Barcelona)", error);
     return defaultLocation;
   }
 }

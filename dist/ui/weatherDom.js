@@ -7,21 +7,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { getWeather, extractCurrentWeatherInfo } from "../services/getWeather.js";
+import { getWeather, extractCurrentWeatherInfo, } from "../services/getWeather.js";
 import { getUserLocation } from "../utils/getUserLocation.js";
 import { getWeatherIcon, getWeatherDescription } from "../utils/weatherCode.js";
 const weatherDisplay = document.getElementById("weather__display");
 export function renderWeather(lat, lon) {
     return __awaiter(this, void 0, void 0, function* () {
+        if (!weatherDisplay)
+            return;
         const data = yield getWeather(lat, lon);
-        if (!data || !weatherDisplay) {
-            if (weatherDisplay) {
-                weatherDisplay.innerHTML = `
+        if (!data) {
+            weatherDisplay.innerHTML = `
                 <div class="text-red-500">
                     <span class="text-2xl">⚠️</span>
                     <p class="text-sm mt-1">Error loading weather data</p>
                 </div>`;
-            }
             return;
         }
         const current = extractCurrentWeatherInfo(data);
@@ -65,7 +65,6 @@ export function startWeather() {
             yield renderWeather(lat, lon);
         }
         catch (error) {
-            console.error("Error starting weather:", error);
             weatherDisplay.innerHTML = `
             <div class="text-orange-500">
                 <span class="text-2xl">⚠️</span>

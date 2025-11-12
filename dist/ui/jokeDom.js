@@ -26,8 +26,13 @@ export function displayNewJoke() {
         clearScoreButtonSelection();
         if (jokeElement) {
             const joke = yield getJoke();
-            jokeElement.textContent = joke;
-            setCurrentJoke(joke);
+            if (joke) {
+                jokeElement.textContent = joke;
+                setCurrentJoke(joke);
+            }
+            else {
+                jokeElement.textContent = "Sorry, the joke couldn't be loaded.";
+            }
         }
     });
 }

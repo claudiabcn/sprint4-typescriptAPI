@@ -23,7 +23,6 @@ export function getUserLocation() {
             };
         }
         catch (error) {
-            console.warn("Usando ubicación por defecto (Barcelona)", error);
             return defaultLocation;
         }
     });

@@ -8,7 +8,6 @@ export async function getWeather(lat: number, lon: number): Promise<WeatherData 
     const data = await fetchData<WeatherData>(url);
     return data;
   } catch (error) {
-    console.error("Error fetching weather:", error);
     return null;
   }
 }
@@ -28,4 +27,3 @@ export function extractCurrentWeatherInfo(
     weatherCode: data.daily.weather_code[0],
   };
 }
-

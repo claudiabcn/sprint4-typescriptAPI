@@ -20,12 +20,11 @@ export function getJoke() {
             }
             else {
                 const data = yield fetchData("https://api.chucknorris.io/jokes/random");
-                console.log("Chuck Norris data:", data);
                 return data.value;
             }
         }
         catch (error) {
-            return "Sorry, the joke couldn't be loaded.";
+            return null;
         }
     });
 }
