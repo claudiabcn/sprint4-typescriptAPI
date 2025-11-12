@@ -20,8 +20,7 @@ export function renderWeather(lat, lon) {
                 <div class="text-red-500">
                     <span class="text-2xl">⚠️</span>
                     <p class="text-sm mt-1">Error loading weather data</p>
-                </div>
-            `;
+                </div>`;
             }
             return;
         }

@@ -11,10 +11,18 @@ import { fetchData } from "../api/apis.js";
 export function getJoke() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const data = yield fetchData("https://icanhazdadjoke.com", {
-                headers: { Accept: "application/json" },
-            });
-            return data.joke;
+            const random = Math.random();
+            if (random < 0.5) {
+                const data = yield fetchData("https://icanhazdadjoke.com", {
+                    headers: { Accept: "application/json" },
+                });
+                return data.joke;
+            }
+            else {
+                const data = yield fetchData("https://api.chucknorris.io/jokes/random");
+                console.log("Chuck Norris data:", data);
+                return data.value;
+            }
         }
         catch (error) {
             return "Sorry, the joke couldn't be loaded.";
