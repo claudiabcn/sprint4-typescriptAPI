@@ -58,14 +58,12 @@ export function setupEventListeners() {
 }
 function clearScoreButtonSelection() {
     scoreButtons.forEach(button => {
-        button.classList.remove('bg-fuchsia-600', 'ring-offset-2', 'ring-4', 'ring-primary');
-        button.classList.add('bg-primary', 'hover:bg-fuchsia-600');
+        button.classList.remove('-translate-y-2', 'scale-110');
     });
 }
 function handleScoreClick(score, clickedButton) {
     clearScoreButtonSelection();
-    clickedButton.classList.remove('bg-primary', 'hover:bg-fuchsia-600');
-    clickedButton.classList.add('bg-fuchsia-600', 'ring-offset-2', 'ring-4', 'ring-primary');
+    clickedButton.classList.add('-translate-y-2', 'scale-110');
     updateScore(score);
 }
 //# sourceMappingURL=jokeDom.js.map
