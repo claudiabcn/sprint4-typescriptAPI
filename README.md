@@ -12,11 +12,11 @@ This sprint involves the creation of a application to master **API consumption**
 
 ## 💻 Technology Stack:
 
-- **TypeScript:**
-- **Vite:**
-- **Tailwind CSS:**
-- **Vitest:**
-- **npm:**
+- **TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **Vitest**
+- **npm**
 
 ## 📋 Files:
 
@@ -63,7 +63,7 @@ This sprint involves the creation of a application to master **API consumption**
 1.  **Clone the Repository:**
 
     ```bash
-    git clone [https://github.com/claudiabcn/sprint4-typescriptAPI](https://github.com/claudiabcn/sprint4-typescriptAPI)
+    git clone https://github.com/claudiabcn/sprint4-typescriptAPI
     ```
 
 2.  **Install Dependencies:**
@@ -79,7 +79,9 @@ This sprint involves the creation of a application to master **API consumption**
 
 [https://sprint4-typescript-api.vercel.app/](https://sprint4-typescript-api.vercel.app/)
 
+![demoPhoto](image.png)
+
 
 ## ⭐ Learnings and challenges:
 
-This sprint provided significant professional growth. The complexity of TypeScript presented a demanding challenge; mastering its syntax and maintaining strict type safety across all interfaces and data flows required considerable effort. Furthermore, integrating multiple, varied APIs—each with unique response structures—proved difficult, requiring meticulous data mapping and normalization to ensure consistent application state. A major professional gain was the discovery and adoption of Vite, whose efficiency and speed  dramatically improved the development workflow and build experience. A notable structural challenge was determining the optimal separation of concerns and deciding how many distinct files and folders to create to isolate functionalities (e.g., separating API calls, state management, and DOM handling) efficiently. Overall, the sprint successfully refined my skills in robust asynchronous programming and structured application design.
+This sprint provided significant professional growth. The complexity of TypeScript presented a demanding challenge; mastering its syntax and maintaining strict type safety across all interfaces and data flows required considerable effort. Furthermore, integrating multiple, varied APIs proved difficult, requiring meticulous data mapping and normalization to ensure consistent application state. A major professional gain was the discovery and adoption of Vite, whose efficiency and speed  dramatically improved the development workflow and build experience. A notable structural challenge was determining the optimal separation of concerns and deciding how many distinct files and folders to create to isolate functionalities (e.g., separating API calls, state management, and DOM handling) efficiently. Overall, the sprint successfully refined my skills in robust asynchronous programming and structured application design.
