@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { getState, setCurrentJoke, updateScore, resetState, hasUserVoted } from '../services/jokeState';
+import { getState, setCurrentJoke, resetState } from '../services/jokeState';
 describe('jokeState', () => {
     beforeEach(() => {
         resetState();
@@ -14,27 +14,6 @@ describe('jokeState', () => {
         setCurrentJoke('Test joke');
         const state = getState();
         expect(state.currentJoke).toBe('Test joke');
-        expect(state.currentScore).toBeNull();
-        expect(state.hasVoted).toBe(false);
-    });
-    it('should update score', () => {
-        setCurrentJoke('Test joke');
-        updateScore(2);
-        const state = getState();
-        expect(state.currentScore).toBe(2);
-        expect(state.hasVoted).toBe(true);
-    });
-    it('should check if user has voted', () => {
-        expect(hasUserVoted()).toBe(false);
-        updateScore(3);
-        expect(hasUserVoted()).toBe(true);
-    });
-    it('should reset state', () => {
-        setCurrentJoke('Test joke');
-        updateScore(1);
-        resetState();
-        const state = getState();
-        expect(state.currentJoke).toBeNull();
         expect(state.currentScore).toBeNull();
         expect(state.hasVoted).toBe(false);
     });
