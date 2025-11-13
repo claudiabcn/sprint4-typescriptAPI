@@ -29,4 +29,19 @@ describe('jokeState', () => {
     expect(state.hasVoted).toBe(false);
   });
 
+  it('should update score', () => {
+    setCurrentJoke('Test joke');
+    updateScore(2);
+    const state = getState();
+    
+    expect(state.currentScore).toBe(2);
+    expect(state.hasVoted).toBe(true);
+  });
+
+  it('should check if user has voted', () => {
+    expect(hasUserVoted()).toBe(false);
+    updateScore(3);
+    expect(hasUserVoted()).toBe(true);
+  });
+
 });
