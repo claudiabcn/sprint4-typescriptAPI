@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { getJoke } from '../services/getJoke.js';
-import { getState, setCurrentJoke, updateScore, resetState, hasUserVoted } from '../services/jokeState.js';
+import { getState, setCurrentJoke, updateScore, resetState } from '../services/jokeState.js';
 import { addReport } from '../services/reportTracking.js';
 const jokeElement = document.getElementById('joke');
 const btnElement = document.getElementById('btn');
@@ -19,10 +19,10 @@ const scoreButtons = [btnScore1, btnScore2, btnScore3].filter((btn) => btn !== n
 export function displayNewJoke() {
     return __awaiter(this, void 0, void 0, function* () {
         const state = getState();
-        if (hasUserVoted() && state.currentJoke !== null) {
-            addReport(state.currentJoke, state.currentScore);
-            resetState();
+        if (state.currentJoke !== null) {
+            addReport(state.currentJoke, state.currentScore || undefined);
         }
+        resetState();
         clearScoreButtonSelection();
         if (jokeElement) {
             const joke = yield getJoke();

@@ -13,13 +13,13 @@ const scoreButtons: HTMLButtonElement[] = [btnScore1, btnScore2, btnScore3].filt
 );
 
 export async function displayNewJoke() { 
-    const state = getState()
+    const state = getState();
     
-    if (hasUserVoted() && state.currentJoke !== null) {
-        addReport(state.currentJoke, state.currentScore!);
-        resetState()
+    if (state.currentJoke !== null) {
+        addReport(state.currentJoke, state.currentScore || undefined);
     }
-
+    
+    resetState();
     clearScoreButtonSelection();
 
     if (jokeElement) {
@@ -61,13 +61,11 @@ export function setupEventListeners() {
 function clearScoreButtonSelection(): void {
     scoreButtons.forEach(button => {
         button.classList.remove('-translate-y-2', 'scale-110'); 
-
     });
 }
 
 function handleScoreClick(score: 1 | 2 | 3, clickedButton: HTMLButtonElement): void {
     clearScoreButtonSelection();
-
     clickedButton.classList.add('-translate-y-2', 'scale-110');
     updateScore(score);
 }

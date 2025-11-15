@@ -14,7 +14,7 @@ export interface ChuckNorrisJoke {
 
 export interface JokeReport {
 joke: string;
-score: 1 | 2 | 3; 
+score: 1 | 2 | 3 | null ; 
 date: string;    
 }
 

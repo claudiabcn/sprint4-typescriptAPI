@@ -5,7 +5,7 @@ export function addReport(joke, score) {
     }
     const newReport = {
         joke,
-        score,
+        score: score || null,
         date: new Date().toISOString(),
     };
     reportJokes.push(newReport);

@@ -2,14 +2,14 @@ import { JokeReport } from "../types/interfaces.js";
 
 const reportJokes: JokeReport[] = [];
 
-export function addReport(joke: string, score: 1 | 2 | 3): void {
+export function addReport(joke: string, score?: 1 | 2 | 3): void {
   if (!joke || joke.trim() === "") {
     return;
   }
 
   const newReport: JokeReport = {
     joke,
-    score,
+    score: score || null,
     date: new Date().toISOString(),
   };
   reportJokes.push(newReport);
