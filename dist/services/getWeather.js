@@ -13,22 +13,19 @@ export function getWeather(lat, lon) {
         const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,uv_index,precipitation_probability&daily=weather_code&forecast_days=3&timezone=auto`;
         try {
             const data = yield fetchData(url);
-            return data;
+            if (!data.current || !data.daily) {
+                return null;
+            }
+            return {
+                temperature: data.current.temperature_2m,
+                precipitationProbability: data.current.precipitation_probability,
+                uvIndex: data.current.uv_index,
+                weatherCode: data.daily.weather_code[0],
+            };
         }
         catch (error) {
             return null;
         }
     });
-}
-export function extractCurrentWeatherInfo(data) {
-    if (!data.current || !data.daily) {
-        return null;
-    }
-    return {
-        temperature: data.current.temperature_2m,
-        precipitationProbability: data.current.precipitation_probability,
-        uvIndex: data.current.uv_index,
-        weatherCode: data.daily.weather_code[0],
-    };
 }
 //# sourceMappingURL=getWeather.js.map
