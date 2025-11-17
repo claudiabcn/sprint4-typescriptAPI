@@ -1,5 +1,5 @@
 import { getJoke } from '../services/getJoke.js';
-import { getState, setCurrentJoke, updateScore, resetState, hasUserVoted } from '../services/jokeState.js';
+import { getState, setCurrentJoke, updateScore, resetState} from '../services/jokeState.js';
 import { addReport } from '../services/reportTracking.js';
 
 const jokeElement = document.getElementById('joke') as HTMLParagraphElement;
@@ -58,13 +58,13 @@ export function setupEventListeners() {
     }
 }
 
-function clearScoreButtonSelection(): void {
+function clearScoreButtonSelection() {
     scoreButtons.forEach(button => {
         button.classList.remove('-translate-y-2', 'scale-110'); 
     });
 }
 
-function handleScoreClick(score: 1 | 2 | 3, clickedButton: HTMLButtonElement): void {
+function handleScoreClick(score: 1 | 2 | 3, clickedButton: HTMLButtonElement) {
     clearScoreButtonSelection();
     clickedButton.classList.add('-translate-y-2', 'scale-110');
     updateScore(score);
