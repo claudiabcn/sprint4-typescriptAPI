@@ -1,4 +1,4 @@
-import { fetchData } from "../api/apis.js";
+import { fetchData } from "./fetchData.js";
 import { WeatherData, CurrentWeatherInfo } from "../types/interfaces.js";
 
 export async function getWeather(

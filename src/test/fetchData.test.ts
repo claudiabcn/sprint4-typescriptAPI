@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { fetchData } from "../api/apis";
+import { fetchData } from "../api/fetchData";
 
 describe("fetchData", () => {
   it("should fetch real data from dad joke API", async () => {

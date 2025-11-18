@@ -1,4 +1,4 @@
-import { fetchData } from "../api/apis.js";
+import { fetchData } from "./fetchData.js";
 import { DadJoke, ChuckNorrisJoke } from "../types/interfaces.js";
 
 export async function getJoke(): Promise<string | null> {

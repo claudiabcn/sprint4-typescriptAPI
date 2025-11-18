@@ -1,4 +1,4 @@
-import { getWeather } from "../services/getWeather.js";
+import { getWeather } from "../api/getWeather.js";
 import { getUserLocation } from "../utils/getUserLocation.js";
 import { getWeatherIcon, getWeatherDescription } from "../utils/weatherCode.js";
 
@@ -10,13 +10,9 @@ export async function renderWeather(lat: number, lon: number): Promise<void> {
   if (!weatherDisplay) return;
 
   const current = await getWeather(lat, lon);
-  
+
   if (!current) {
-    weatherDisplay.innerHTML = `
-      <div class="text-red-500">
-        <span class="text-2xl">⚠️</span>
-        <p class="text-sm mt-1">Error loading weather data</p>
-      </div>`;
+    weatherDisplay.innerHTML = `Error loading weather data ⚠️`;
     return;
   }
 
@@ -24,39 +20,23 @@ export async function renderWeather(lat: number, lon: number): Promise<void> {
   const weatherDesc = getWeatherDescription(current.weatherCode);
 
   weatherDisplay.innerHTML = `
-    <div class="flex flex-col gap-2">
-      <div class="flex items-center justify-center gap-2">
-        <span class="text-4xl">${weatherIcon}</span>
-        <span class="text-lg font-semibold text-gray-800">${weatherDesc}</span>
-      </div>
-      <div class="flex items-center justify-center gap-4 text-gray-700 text-base">
-        <span class="font-semibold">🌡️ ${current.temperature.toFixed(1)}°C</span>
-        <span>🌧️ ${current.precipitationProbability.toFixed(0)}%</span>
-        <span>📆 UV: ${current.uvIndex.toFixed(1)}</span>
-      </div>
+    <div class="weather-header">
+      <span class="icon">${weatherIcon}</span>
+      <span class="desc">${weatherDesc}</span>
     </div>
-  `;
+      <span>🌡️ ${current.temperature.toFixed(1)}°C</span>
+      <span>🌧️ ${current.precipitationProbability.toFixed(0)}%</span>
+      <span>📆 UV: ${current.uvIndex.toFixed(1)}</span>`;
 }
 
 export async function startWeather(): Promise<void> {
   if (!weatherDisplay) return;
-
-  weatherDisplay.innerHTML = `
-    <div class="text-gray-500">
-      <div class="animate-pulse">🌤 Loading weather...</div>
-    </div>
-  `;
+  weatherDisplay.innerHTML = `Loading weather...`;
 
   try {
     const { lat, lon } = await getUserLocation();
     await renderWeather(lat, lon);
   } catch (error) {
-    weatherDisplay.innerHTML = `
-      <div class="text-orange-500">
-        <span class="text-2xl">⚠️</span>
-        <p class="text-sm mt-1">Weather unavailable</p>
-        <p class="text-xs text-gray-500">Please enable location access</p>
-      </div>
-    `;
+    weatherDisplay.innerHTML = `Please enable location access`;
   }
 }

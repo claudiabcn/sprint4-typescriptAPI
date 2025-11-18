@@ -1,5 +1,5 @@
 export async function fetchData<T>(
-  url: string, 
+  url: string,
   options: RequestInit = {}
 ): Promise<T> {
   const response = await fetch(url, options);
